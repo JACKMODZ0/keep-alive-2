@@ -1,0 +1,15 @@
+name: Keep Codespace Alive
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # har 1 ghante
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Codespace URL
+        run: |
+          curl -s https://supreme-enigma-x5qr5575ww4w3px9v.github.dev/ > /dev/null
